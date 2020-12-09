@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return '<h1>Hello, i will give you a million dollars.</h1>';
 });
 
 Route::get('/home', function () {
     return view('home', ['var' => 11116]);
-})->name('home');
+})->name('home');*/
 
 /*Route::get('/contact', function () {
     return view('contact');
@@ -36,7 +36,7 @@ Route::post('/send-email', function () {
     return 'Send Email';
 });*/
 
-Route::match(['post', 'get'], '/contact2', function () {
+/*Route::match(['post', 'get'], '/contact2', function () {
     if(!empty($_POST)){
         dump($_POST);
     }
@@ -54,9 +54,16 @@ Route::get('/post/{id?}', function ($id) {
 
 Route::get('/postr/{slug}/{id}', function ($slug, $id) {
     return "Postr $id === ||| === $slug";
-})->where(['slug' => '[A-Za-z0-9-]+', 'id' => '[0-9]+']);
+})->where(['slug' => '[A-Za-z0-9-]+', 'id' => '[0-9]+']);*/
 //})->where('id', '[0-9]+');
 // Так же указывая в провайдере RouteServiceProvider.php
+
+
+Route::resource('/admin/posts', 'PostController', ['parameters' => [
+    'posts' => 'id',
+]]);
+
+Route::get('/', 'HomeController@index');
 
 // Что бы не показывать 404
 Route::fallback(function(){
@@ -64,3 +71,5 @@ Route::fallback(function(){
     // Показать свою страницу 404 ошибки
     abort(404, 'Oops! Page not found...');
 });
+
+//Route::get('/page/{slug}', 'PageController@show');
