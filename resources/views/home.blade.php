@@ -10,7 +10,7 @@
 <body>
 Hi World!
 <ul>
-    @foreach($posts as $post)
+{{--    @foreach($posts as $post)
         <li>
             <p>id : {{ $post->id }}</p>
             <p>Title : {{ $post->title }}</p>
@@ -23,11 +23,11 @@ Hi World!
             @endif
             <hr>
         </li>
-    @endforeach
+    @endforeach--}}
 </ul>
 <hr background="firebreak" color="firebreak">
 <ul>
-    @foreach($countries as $country)
+{{--    @foreach($countries as $country)
         <li>
             <p>Code : {{ $country->Code }}</p>
             <p>Name : {{ $country->Name }}</p>
@@ -42,7 +42,7 @@ Hi World!
             @endif
             <hr>
         </li>
-    @endforeach
+    @endforeach--}}
 </ul>
 </body>
 </html>

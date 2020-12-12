@@ -18,6 +18,8 @@ class Post extends Model
 //    public $incrementing = false;
 //    protected $keyType = 'string';
 //    public $timestamps = false;
+
+    // По умолчанию записать в бд во время записи в бд
     /*protected $attributes = [
         'content' => 'Lorem ipsum...',
     ];*/
