@@ -18,12 +18,15 @@ class Post extends Model
 //    public $incrementing = false;
 //    protected $keyType = 'string';
 //    public $timestamps = false;
-
-    // По умолчанию записать в бд во время записи в бд
     /*protected $attributes = [
         'content' => 'Lorem ipsum...',
     ];*/
 
     protected $fillable = ['title', 'content'];
+
+    public function rubric()
+    {
+        return $this->belongsTo(Rubric::class);
+    }
 
 }
